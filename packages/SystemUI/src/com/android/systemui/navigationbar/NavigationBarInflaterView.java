@@ -94,6 +94,8 @@ public class NavigationBarInflaterView extends FrameLayout implements TunerServi
             Settings.Secure.NAVIGATION_BAR_HINT;
     private static final String OVERLAY_NAVIGATION_HIDE_HINT =
             "org.derpfest.overlay.customization.navbar.nohint";
+    private static final String OVERLAY_LAUNCHER3_HIDE_HINT =
+            "org.derpfest.overlay.customization.launcher3.nohint";
 
     private static class Listener implements NavigationModeController.ModeChangedListener {
         private final WeakReference<NavigationBarInflaterView> mSelf;
@@ -280,6 +282,7 @@ public class NavigationBarInflaterView extends FrameLayout implements TunerServi
         final int userId = ActivityManager.getCurrentUser();
         try {
             iom.setEnabled(OVERLAY_NAVIGATION_HIDE_HINT, state, userId);
+            iom.setEnabled(OVERLAY_LAUNCHER3_HIDE_HINT, state, userId);
             if (state) {
                 // As overlays are also used to apply navigation mode, it is needed to set
                 // our customization overlay to highest priority to ensure it is applied.
