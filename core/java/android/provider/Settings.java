@@ -4681,6 +4681,13 @@ public final class Settings {
                 "display_color_mode_vendor_hint";
 
         /**
+         * Whether to play tone while outgoing call is accepted.
+         * The value 1 - vibrate, 0 - not
+         * @hide
+         */
+        public static final String CALL_CONNECTED_TONE_ENABLED = "call_connected_tone_enabled";
+
+        /**
          * The user selected min refresh rate in frames per second.
          *
          * If this isn't set, 0 will be used.
@@ -6457,6 +6464,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(STATUS_BAR_SHOW_BATTERY_PERCENT);
             PRIVATE_SETTINGS.add(SWAP_VOLUME_KEYS_ON_ROTATION);
             PRIVATE_SETTINGS.add(KEY_EDGE_LONG_SWIPE_ACTION);
+            PRIVATE_SETTINGS.add(CALL_CONNECTED_TONE_ENABLED);
         }
 
         /**
@@ -13311,6 +13319,15 @@ public final class Settings {
         public static final String MOBILE_DATA_ALWAYS_ON = "mobile_data_always_on";
 
         /**
+        * Whether to allow modem to intelligently switch DDS without user direction
+        *
+        * (0 = disabled, 1 = enabled)
+        * @hide
+        */
+        @Readable
+        public static final String SMART_DDS_SWITCH = "smart_dds_switch";
+
+        /**
          * Whether the wifi data connection should remain active even when higher
          * priority networks like Ethernet are active, to keep both networks.
          * In the case where higher priority networks are connected, wifi will be
@@ -18035,6 +18052,14 @@ public final class Settings {
          */
         @Readable
         public static final String CELL_ON = "cell_on";
+
+        /**
+         * Whether to vibrate while outgoing call is accepted
+         * The value 1 - vibrate, 0 - not
+         * @hide
+         */
+        public static final String VIBRATING_FOR_OUTGOING_CALL_ACCEPTED =
+                "vibrating_for_outgoing_call_accepted";
 
         /**
          * Global settings which can be accessed by instant apps.
